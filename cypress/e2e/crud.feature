@@ -1,4 +1,6 @@
-Feature: Buscar de usuarios
+Feature: CRUD
+
+Create user, GetAll users, Update user e detele user. 
 
   Scenario: 01 - Buscar todos usuarios
     Given que o sistema precise listar todos usuarios
