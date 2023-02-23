@@ -16,9 +16,7 @@
     "@cypress/webpack-preprocessor": "^5.12.0",
     "cypress": "^10.3.0",
     "cypress-fill-command": "^1.0.2",
+    "faker": "^6.6.6",
     "start-server-and-test": "^1.15.4"
-  },
-  "dependencies": {
-    "faker": "^5.5.3"
   }
 }
