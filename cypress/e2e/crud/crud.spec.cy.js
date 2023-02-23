@@ -1,5 +1,6 @@
 import{Given, When, Then,} from '@badeball/cypress-cucumber-preprocessor'
 import faker from 'faker'
+import '@bahmutov/cy-api'
 
 /// <reference types="cypress" />
 
@@ -9,7 +10,7 @@ Given(/^que o sistema precise listar todos usuarios$/, () => {
 });
 
 When(/^enviar requisicao no endpoint$/, () => {
-    cy.request({
+    cy.api({
         url:'usuarios',
         method:'GET',
         
@@ -31,7 +32,7 @@ Given(/^que o sistema precise busca usuario invalido$/, () => {
 });
 
 When(/^enviar requisicao com idUserInvalido$/, () => {
-    cy.request({
+    cy.api({
         url:'usuarios/idUserInvalido',
         method:'GET',
         failOnStatusCode: false
@@ -51,7 +52,7 @@ Given(/^que o sistema queira cadastrar usuario novo$/, () => {
 });
 
 When(/^enviar requisicao com payloand valido$/, () => {
-	cy.request({
+	cy.api({
         url:"usuarios",
         method:"POST",
         body:{
@@ -101,7 +102,7 @@ Given(/^que o sistema queira cadastrar usuario invalido$/, () => {
 });
 
 When(/^enviar requisicao com payloand invalido$/, () => {
-	cy.request({
+	cy.api({
         url:"usuarios",
         method:"POST",
         failOnStatusCode: false   
@@ -127,7 +128,7 @@ Given(/^que o sistema precise atualizar usuario$/, () => {
 });
 //id usuario na url 
 When(/^enviar requisicao com alteracao de senha$/, () => {
-	cy.request({
+	cy.api({
         url:"usuarios",
         method:"POST",
         body:{
@@ -172,7 +173,7 @@ Given(/^que o sistema precise remover usuario$/, () => {
 When(/^enviar requisicao delete com idUser$/, () => {
 	
 
-    cy.request({
+    cy.api({
         url:"usuarios",
         method:"POST",
         body:{
