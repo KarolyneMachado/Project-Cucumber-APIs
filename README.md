@@ -19,6 +19,7 @@
 - Cucumber
 - Faker 
 - webpack
+- bahmutov/cy-api
 
 # Comandos 
 - npx cypress open
