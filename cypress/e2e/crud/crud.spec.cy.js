@@ -36,11 +36,11 @@ When(/^enviar requisicao com idUserInvalido$/, () => {
         url:'usuarios/idUserInvalido',
         method:'GET',
         failOnStatusCode: false
-    }).as("getRequest404")
+    }).as("getRequest400")
 });
 
 Then(/^esperado response code is 400$/, () => {
-	cy.get("@getRequest404").should((response)=>{
+	cy.get("@getRequest400").should((response)=>{
         expect(response.status).to.eq(400);
         expect(response.body).to.include({message: "Usuário não encontrado"})
     })
