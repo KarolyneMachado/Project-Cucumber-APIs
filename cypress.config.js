@@ -36,6 +36,7 @@ async function setupNodeEvents(on, config) {
 
 module.exports = defineConfig({
   e2e: {
+    projectId: "pa472o",
     baseUrl: 'https://serverest.dev/',
     specPattern: "**/*.feature",
     supportFile: 'cypress/support/e2e.js',
