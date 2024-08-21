@@ -20,6 +20,7 @@
   },
   "dependencies": {
     "faker": "^5.5.3",
-    "my-server": "^2.0.7"
+    "my-server": "^2.0.7",
+    "npm": "^10.8.2"
   }
 }
