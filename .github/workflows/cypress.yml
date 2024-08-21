@@ -24,13 +24,20 @@ jobs:
         run: npm install
 
       - name: Start server
-        run: npm start &
+        run: |
+          npm start &
+          sleep 10 # Aguarda 10 segundos para o servidor iniciar
         env:
           PORT: 3000 # Ajuste se necessário para o seu ambiente
 
+      - name: Check server status
+        run: |
+          curl -I http://localhost:3000 || echo "Server is not running"
+        continue-on-error: true # Permite que o trabalho continue mesmo se o comando falhar
+
       - name: Wait for server to be ready
-        run: npx wait-on http://localhost:3000 --timeout=300000 --retry=10
-        timeout-minutes: 60
+        run: npx wait-on http://localhost:3000 --timeout=600000 --retry=10
+        timeout-minutes: 10
 
       - name: Run Cypress tests
         uses: cypress-io/github-action@v4
