@@ -33,7 +33,7 @@ Given(/^que o sistema precise busca usuario invalido$/, () => {
 
 When(/^enviar requisicao com idUserInvalido$/, () => {
     cy.api({
-        url:'usuarios/idUserInvalido',
+        url:'usuarios/idUserInvalidoIn',
         method:'GET',
         failOnStatusCode: false
     }).as("getRequest400")
